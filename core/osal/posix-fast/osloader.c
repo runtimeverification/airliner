@@ -117,10 +117,10 @@ int32  OS_ModuleTableInit ( void )
              
              The address of the symbol will be stored in the pointer that is passed in.
 ---------------------------------------------------------------------------------------*/
-int32 OS_SymbolLookup( uint32 *SymbolAddress, const char *SymbolName )
+int32 OS_SymbolLookup( cpuaddr *SymbolAddress, const char *SymbolName )
 {
    const char   *dlError;           /*  Pointer to error string   */
-   uint32        Function;
+   cpuaddr        Function;
 
    /*
    ** Check parameters
@@ -133,7 +133,7 @@ int32 OS_SymbolLookup( uint32 *SymbolAddress, const char *SymbolName )
    /*
    ** Lookup the entry point
    */
-   Function = (uint32 )dlsym((void *)0, SymbolName);
+   Function = (cpuaddr )dlsym((void *)0, SymbolName);
    dlError = dlerror();
    if( dlError )
    {
@@ -281,7 +281,7 @@ int32 OS_ModuleLoad ( uint32 *module_id, const char *module_name, const char *fi
     ** fill out the OS_module_table entry for this new module
     */
     OS_module_table[possible_moduleid].entry_point = 0; /* Only for certain targets */
-    OS_module_table[possible_moduleid].host_module_id = (uint32) function_lib;
+    OS_module_table[possible_moduleid].host_module_id = (cpuaddr) function_lib;
     strncpy(OS_module_table[possible_moduleid].filename , filename, OS_MAX_PATH_LEN);
     strncpy(OS_module_table[possible_moduleid].name , module_name, OS_MAX_API_NAME);
  

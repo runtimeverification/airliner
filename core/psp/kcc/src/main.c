@@ -1,3 +1,4 @@
+#include <unistd.h>
 
 extern void PSP_Main(int argc, char *argv[]);
 

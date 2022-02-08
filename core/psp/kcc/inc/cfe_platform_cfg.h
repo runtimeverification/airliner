@@ -551,7 +551,7 @@
 **       There is a lower limit of 15 and an upper limit of 50 on this configuration
 **       paramater.
 */
-#define CFE_ES_OBJECT_TABLE_SIZE  15  /* 30 */
+#define CFE_ES_OBJECT_TABLE_SIZE 30
 
 
 /**
@@ -1497,7 +1497,7 @@
 **  \par Limits
 **       The cFE does not place a limit on the size of this parameter.
 */
-#define CFE_TBL_BUF_MEMORY_BYTES        1048576
+#define CFE_TBL_BUF_MEMORY_BYTES        2048
 
 /**
 **  \cfetblcfg Maximum Size Allowed for a Double Buffered Table
@@ -1509,7 +1509,7 @@
 **       The cFE does not place a limit on the size of this parameter but it must be
 **       less than half of #CFE_TBL_BUF_MEMORY_BYTES.
 */
-#define CFE_TBL_MAX_DBL_TABLE_SIZE    65535
+#define CFE_TBL_MAX_DBL_TABLE_SIZE    512
 
 /**
 **  \cfetblcfg Maximum Size Allowed for a Single Buffered Table
@@ -1525,7 +1525,7 @@
 **       small enough to allow for #CFE_TBL_MAX_SIMULTANEOUS_LOADS number of tables
 **       to fit into #CFE_TBL_BUF_MEMORY_BYTES.
 */
-#define CFE_TBL_MAX_SNGL_TABLE_SIZE   65535
+#define CFE_TBL_MAX_SNGL_TABLE_SIZE   512
 
 /**
 **  \cfetblcfg Maximum Number of Tables Allowed to be Registered
@@ -1538,7 +1538,7 @@
 **       determines the size of the Table Registry.  An excessively high number will waste
 **       memory.
 */
-#define CFE_TBL_MAX_NUM_TABLES         128
+#define CFE_TBL_MAX_NUM_TABLES         4
 
 /**
 **  \cfetblcfg Maximum Number of Critical Tables that can be Registered
@@ -1580,7 +1580,7 @@
 **       degrade system performance and waste memory.  A number less than 5 is
 **       suggested but not required.
 */
-#define CFE_TBL_MAX_SIMULTANEOUS_LOADS   4
+#define CFE_TBL_MAX_SIMULTANEOUS_LOADS   1
 
 /**
 **  \cfetblcfg Maximum Number of Simultaneous Table Validations

@@ -22,11 +22,11 @@
 ** Platform Configuration Parameters for the OS API
 */
 
-#define OS_MAX_TASKS                100
-#define OS_MAX_QUEUES               255
-#define OS_MAX_COUNT_SEMAPHORES     100
-#define OS_MAX_BIN_SEMAPHORES       100
-#define OS_MAX_MUTEXES              100
+#define OS_MAX_TASKS                10
+#define OS_MAX_QUEUES               10
+#define OS_MAX_COUNT_SEMAPHORES     10
+#define OS_MAX_BIN_SEMAPHORES       10
+#define OS_MAX_MUTEXES              10
 #define OS_MAX_TIMEOUTS				(OS_MAX_QUEUES+OS_MAX_COUNT_SEMAPHORES+OS_MAX_BIN_SEMAPHORES)
 
 /*
