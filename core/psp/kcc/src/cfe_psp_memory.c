@@ -580,7 +580,9 @@ int32 CFE_PSP_GetCFETextSegmentInfo(cpuaddr *PtrToCFESegment, uint32 *SizeOfCFES
    {
       Address = (uint32) (&_init);
       memcpy(PtrToCFESegment,&Address,sizeof(PtrToCFESegment));
-      *SizeOfCFESegment = (uint32) ((uint32) &_fini - (uint32) &_init);
+      /* *SizeOfCFESegment = (uint32) ((uint32) &_fini - (uint32) &_init); */
+      *SizeOfCFESegment = (uint32) &_fini;
+      *SizeOfCFESegment -= (uint32) &_init;
       
       return_code = CFE_PSP_SUCCESS;
    }
