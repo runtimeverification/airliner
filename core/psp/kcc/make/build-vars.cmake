@@ -45,8 +45,8 @@ set(PSP_BB_UT_BSP_SRC
 )
 
 # Set compiler flags for apps and the main executable.
-set(COMPILE_FLAGS "-m32 -g" )
-set(LINK_FLAGS "-m32")
+set(COMPILE_FLAGS "-g" )
+set(LINK_FLAGS "")
 
 set(TOOLCHAIN_PREFIX "")
 
