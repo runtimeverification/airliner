@@ -46,13 +46,13 @@ set(PSP_BB_UT_BSP_SRC
 
 # Set compiler flags for apps and the main executable.
 set(COMPILE_FLAGS "-g" )
-set(LINK_FLAGS "")
+set(LINK_FLAGS "-d -dump")
 
 set(TOOLCHAIN_PREFIX "")
 
 # which compilers to use for C and C++
 set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}kcc)
-set(CMAKE_C_FLAGS "-g -O2 -Wno-pointer-to-int-cast")
+set(CMAKE_C_FLAGS "-d -dump -g -O2 -Wno-pointer-to-int-cast")
 
 #set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}kc++)
 #set(CMAKE_CXX_FLAGS "-m32 -g -fstack-protector-all -O3 -std=c++11")
