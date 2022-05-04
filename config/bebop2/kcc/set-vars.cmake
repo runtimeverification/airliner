@@ -36,7 +36,7 @@ set(OSAL ${PROJECT_SOURCE_DIR}/core/osal/posix-fast)
 
 # Enable this setting during RV-Match development to easily get the precise KCC
 # command line needed to compile a troublesome file.
-set(CMAKE_EXPORT_COMPILE_COMMANDS On)
+#set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 
 add_compile_definitions(__signed__=signed)
 add_compile_definitions(_DEFAULT_SOURCE)
