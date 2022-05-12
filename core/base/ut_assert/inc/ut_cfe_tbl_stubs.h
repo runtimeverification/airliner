@@ -47,7 +47,7 @@ extern "C" {
 
 #define CFE_TBL_NOT_OWNED               0xFFFFFFFF
 #define CFE_TBL_NOT_FOUND               (-1)
-#define CFE_TBL_END_OF_LIST             (short)0xFFFF
+#define CFE_TBL_END_OF_LIST             (CFE_TBL_Handle_t)0xFFFF
 
 typedef enum 
 {
@@ -73,23 +73,23 @@ typedef enum
 
 typedef struct
 {
-    int32 (*CFE_TBL_Register)(short*, const char *,uint32, uint16, CFE_TBL_CallbackFuncPtr_t);
-    int32 (*CFE_TBL_Load)(short, CFE_TBL_SrcEnum_t, const void *);
-    int32 (*CFE_TBL_Manage)(short);
-    int32 (*CFE_TBL_GetAddress)(void **, short);
-    int32 (*CFE_TBL_GetAddresses)(void **[], uint16, const short []);
+    int32 (*CFE_TBL_Register)(CFE_TBL_Handle_t*, const char *,uint32, uint16, CFE_TBL_CallbackFuncPtr_t);
+    int32 (*CFE_TBL_Load)(CFE_TBL_Handle_t, CFE_TBL_SrcEnum_t, const void *);
+    int32 (*CFE_TBL_Manage)(CFE_TBL_Handle_t);
+    int32 (*CFE_TBL_GetAddress)(void **, CFE_TBL_Handle_t);
+    int32 (*CFE_TBL_GetAddresses)(void **[], uint16, const CFE_TBL_Handle_t []);
     int32 (*CFE_TBL_GetInfo)(CFE_TBL_Info_t *TblInfoPtr, const char *TblName);
-    int32 (*CFE_TBL_Share)(short *TblHandlePtr, const char *TblName);
-    int32 (*CFE_TBL_Unregister)(short TblHandle);
-    int32 (*CFE_TBL_Update)(short TblHandle);
-    int32 (*CFE_TBL_ReleaseAddress)(short TblHandle);
-    int32 (*CFE_TBL_ReleaseAddresses)(uint16 NumTables, const short TblHandles[]);
-    int32 (*CFE_TBL_Validate)(short TblHandle);
-    int32 (*CFE_TBL_GetStatus)(short TblHandle);
-    int32 (*CFE_TBL_DumpToBuffer)(short TblHandle);
-    int32 (*CFE_TBL_Modified)(short TblHandle);
+    int32 (*CFE_TBL_Share)(CFE_TBL_Handle_t *TblHandlePtr, const char *TblName);
+    int32 (*CFE_TBL_Unregister)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_Update)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_ReleaseAddress)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_ReleaseAddresses)(uint16 NumTables, const CFE_TBL_Handle_t TblHandles[]);
+    int32 (*CFE_TBL_Validate)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_GetStatus)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_DumpToBuffer)(CFE_TBL_Handle_t TblHandle);
+    int32 (*CFE_TBL_Modified)(CFE_TBL_Handle_t TblHandle);
     int32 (*CFE_TBL_CleanUpApp)(uint32 AppId);
-    int32 (*CFE_TBL_NotifyByMessage)(short TblHandle, uint32 MsgId, uint16 CommandCode, uint32 Parameter);
+    int32 (*CFE_TBL_NotifyByMessage)(CFE_TBL_Handle_t TblHandle, uint32 MsgId, uint16 CommandCode, uint32 Parameter);
 } Ut_CFE_TBL_HookTable_t;
 
 typedef struct

@@ -46,13 +46,13 @@ typedef enum
 
 typedef struct
 {
-    int32 (*CFE_TBL_Register)(short*, const char *,uint32, uint16, CFE_TBL_CallbackFuncPtr_t);
-    int32 (*CFE_TBL_Load)(short, CFE_TBL_SrcEnum_t, const void *);
-    int32 (*CFE_TBL_Manage)(short);
-    int32 (*CFE_TBL_GetAddress)(void **, short);
-    int32 (*CFE_TBL_GetAddresses)(void **[], uint16, const short []);
+    int32 (*CFE_TBL_Register)(CFE_TBL_Handle_t*, const char *,uint32, uint16, CFE_TBL_CallbackFuncPtr_t);
+    int32 (*CFE_TBL_Load)(CFE_TBL_Handle_t, CFE_TBL_SrcEnum_t, const void *);
+    int32 (*CFE_TBL_Manage)(CFE_TBL_Handle_t);
+    int32 (*CFE_TBL_GetAddress)(void **, CFE_TBL_Handle_t);
+    int32 (*CFE_TBL_GetAddresses)(void **[], uint16, const CFE_TBL_Handle_t []);
     int32 (*CFE_TBL_GetInfo)(CFE_TBL_Info_t *TblInfoPtr, const char *TblName);
-    int32 (*CFE_TBL_NotifyByMessage)(short TblHandle, uint32 MsgId, uint16 CommandCode, uint32 Parameter);
+    int32 (*CFE_TBL_NotifyByMessage)(CFE_TBL_Handle_t TblHandle, uint32 MsgId, uint16 CommandCode, uint32 Parameter);
 } Ut_CFE_TBL_HookTable_t;
 
 typedef struct
