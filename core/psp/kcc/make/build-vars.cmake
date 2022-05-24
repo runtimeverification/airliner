@@ -52,7 +52,25 @@ set(TOOLCHAIN_PREFIX "")
 
 # which compilers to use for C and C++
 set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}kcc)
-set(CMAKE_C_FLAGS "-g -O2 -Wno-pointer-to-int-cast -Xclang='-fPIE' -DOSAPI_NO_SPECIAL_ATTRIBS -D'__pragma(args)=_Pragma(#args)'")
+
+# General flags
+set(CMAKE_C_FLAGS "-g -O2 -Wno-pointer-to-int-cast")
+
+# https://github.com/runtimeverification/c-semantics/issues/480
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D__signed__=signed")
+
+# https://github.com/runtimeverification/c-semantics/issues/548
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Xclang='-fPIE' -DOSAPI_NO_SPECIAL_ATTRIBS")
+
+# https://github.com/runtimeverification/c-semantics/issues/509
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_POSIX_SOURCE -D_DEFAULT_SOURCE")
+
+# https://github.com/runtimeverification/c-semantics/issues/493
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D'__pragma(args)=_Pragma(#args)'")
+
+# Silence unhelpful checker warnings
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-object-to-function")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-function-to-object")
 
 #set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}kc++)
 set(CMAKE_CXX_FLAGS "-g -fstack-protector-all -O3 -std=c++11")
