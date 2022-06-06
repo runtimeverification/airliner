@@ -72,5 +72,12 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D'__pragma(args)=_Pragma(#args)'")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-object-to-function")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-function-to-object")
 
+# We use an environment variable here to minimise the changes required to the
+# actual build system to make it produce kcc_config files for the Airliner unit
+# tests.
+if(DEFINED ENV{KCC_VERBOSE})
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -d -dump")
+endif()
+
 #set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}kc++)
 set(CMAKE_CXX_FLAGS "-g -fstack-protector-all -O3 -std=c++11")
