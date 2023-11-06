@@ -44,7 +44,7 @@
 /* 
 ** The maxium length allowed for a object (task,queue....) name 
 */
-#define OS_MAX_API_NAME     20   /* 40  */
+#define OS_MAX_API_NAME     40
 
 /* 
 ** The maximum length for a file name 

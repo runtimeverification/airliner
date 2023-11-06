@@ -33,7 +33,7 @@
 **       This parameter has a lower limit of 1 and an upper limit of 1024.
 **
 */
-#define CFE_SB_MAX_MSG_IDS              2 /* 256 */
+#define CFE_SB_MAX_MSG_IDS              256
 
 
 /**
@@ -51,7 +51,7 @@
 **       This parameter must also be less than or equal to OS_MAX_QUEUES
 **
 */
-#define CFE_SB_MAX_PIPES                1 /* 255 */
+#define CFE_SB_MAX_PIPES                255
 
 
 /**
@@ -65,7 +65,7 @@
 **       This parameter has a lower limit of 1 and an upper limit of 64.
 **
 */
-#define CFE_SB_MAX_DEST_PER_PKT         1 /* 16 */
+#define CFE_SB_MAX_DEST_PER_PKT         16
 
 
 /**
@@ -104,7 +104,7 @@
 **       This parameter has a lower limit of 512 and an upper limit 4.29G bytes.
 **
 */
-#define CFE_SB_BUF_MEMORY_BYTES         512   /* 524288 */
+#define CFE_SB_BUF_MEMORY_BYTES         524288
 
 
 /**
@@ -118,7 +118,7 @@
 **  \par Limits
 **       This parameter has a lower limit of 1 and an upper limit of 65535.
 */
-#define CFE_SB_MAX_PIPE_DEPTH           1   /* 256  */
+#define CFE_SB_MAX_PIPE_DEPTH           256
 
 
 /**
@@ -136,7 +136,7 @@
 **  \par Limits
 **       This parameter has a lower limit of 1 and an upper limit of 0xFFFF.
 */
-#define CFE_SB_HIGHEST_VALID_MSGID      1   /* 0x1FFF */
+#define CFE_SB_HIGHEST_VALID_MSGID      0x1FFF
 
 
 /**
@@ -482,7 +482,7 @@
 **       There is a lower limit of 6 and an upper limit of 64 on this configuration
 **       paramater. The lower limit corresponds to the cFE internal applications.
 */
-#define CFE_ES_MAX_APPLICATIONS 6   /* 64 */
+#define CFE_ES_MAX_APPLICATIONS 64
 
 
 /**
@@ -496,7 +496,7 @@
 **       There is a lower limit of 1 and an upper limit of 64 on this configuration
 **       paramater.
 */
-#define CFE_ES_MAX_LIBRARIES 1   /* 10 */
+#define CFE_ES_MAX_LIBRARIES 10
 
 /**
 **  \cfeescfg Define Max Number of ER (Exception and Reset) log entries
@@ -551,7 +551,7 @@
 **       There is a lower limit of 15 and an upper limit of 50 on this configuration
 **       paramater.
 */
-#define CFE_ES_OBJECT_TABLE_SIZE  15  /* 30 */
+#define CFE_ES_OBJECT_TABLE_SIZE  30
 
 
 /**
@@ -563,7 +563,7 @@
 **  \par Limits
 **       This parameter has a lower limit of 1 and an upper limit of 65535.
 */
-#define CFE_ES_MAX_GEN_COUNTERS    1   /* 8 */
+#define CFE_ES_MAX_GEN_COUNTERS    8
 
 
 /**
