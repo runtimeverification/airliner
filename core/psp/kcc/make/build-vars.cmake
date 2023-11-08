@@ -72,6 +72,9 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D'__pragma(args)=_Pragma(#args)'")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-object-to-function")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-function-to-object")
 
+# Disable whole-archive inclusion
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --no-whole-archive")
+
 # We use an environment variable here to minimise the changes required to the
 # actual build system to make it produce kcc_config files for the Airliner unit
 # tests.
